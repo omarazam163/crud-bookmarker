@@ -16,8 +16,8 @@ addBtn.addEventListener("click", () => {
     name: siteName.value,
   };
   if (
-    siteUrl.classList.contains("is-valid") ||
-    siteUrl.classList.contains("is-valid")
+    siteUrl.classList.contains("is-valid") &&
+    siteName.classList.contains("is-valid")
   ) {
     bookmarks.push(site);
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
@@ -89,7 +89,7 @@ function validteUrl() {
 }
 
 function validateName() {
-  let regex = /.{3,}/;
+  let regex = /\w{3,}/;
   if (regex.test(siteName.value)) {
     siteName.classList.remove("is-invalid");
     siteName.classList.add("is-valid");
