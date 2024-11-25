@@ -3,8 +3,8 @@ let siteUrl = document.getElementById("site-url");
 let addBtn = document.getElementById("submit-btn");
 let bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
 let table = document.querySelector(".mytable tbody");
-let popUp = document.querySelector('.pop-up');
-let close = document.querySelector('.close');
+let popUp = document.querySelector(".pop-up");
+let close = document.querySelector(".close");
 if (bookmarks === null) {
   bookmarks = [];
 }
@@ -16,23 +16,20 @@ addBtn.addEventListener("click", () => {
     name: siteName.value,
   };
   if (
-    siteUrl.classList.contains('is-valid') ||
+    siteUrl.classList.contains("is-valid") ||
     siteUrl.classList.contains("is-valid")
   ) {
-  bookmarks.push(site);
-  localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
-  displayBookmarks(site, bookmarks.length - 1);
-  siteName.value = "";
-  siteUrl.value = "";
-  }
-  else
-  {
-    console.log('not valid');
-    popUp.classList.remove('d-none');
-    popUp.classList.add('d-block');
+    bookmarks.push(site);
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    displayBookmarks(site, bookmarks.length - 1);
+    siteName.value = "";
+    siteUrl.value = "";
+  } else {
+    console.log("not valid");
+    popUp.classList.remove("d-none");
+    popUp.classList.add("d-block");
   }
 });
-
 
 function displayBookmarks(bookmark, index) {
   table.innerHTML += `
@@ -60,9 +57,7 @@ function displayBookmarks(bookmark, index) {
               </button>
             </td>
           </tr>`;
-          
-  }
-
+}
 
 function update() {
   let i = 0;
@@ -75,74 +70,59 @@ function update() {
 document.addEventListener("DOMContentLoaded", update);
 
 function remove(index) {
-    console.log(index);
-    bookmarks.splice(index, 1);
-    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
-    update();
+  console.log(index);
+  bookmarks.splice(index, 1);
+  localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  update();
 }
-
 
 function validteUrl() {
-
   let regex =
-    /(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?\/[a-zA-Z0-9]{2,}|((https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?)|(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})?/g;
-  if(regex.test(siteUrl.value))
-  {
-  siteUrl.classList.remove('is-invalid');
-  siteUrl.classList.add('is-valid');
-  }
-  else
-  {
-    siteUrl.classList.remove('is-valid');
-    siteUrl.classList.add('is-invalid');
+    /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/;
+  if (regex.test(siteUrl.value)) {
+    siteUrl.classList.remove("is-invalid");
+    siteUrl.classList.add("is-valid");
+  } else {
+    siteUrl.classList.remove("is-valid");
+    siteUrl.classList.add("is-invalid");
   }
 }
 
-function validateName()
-{
-  let regex = /.{3,}/
-  if(regex.test(siteName.value))
-  {
-    siteName.classList.remove('is-invalid');
-    siteName.classList.add('is-valid');
-  }
-  else
-  {
-    siteName.classList.remove('is-valid');
-    siteName.classList.add('is-invalid');
+function validateName() {
+  let regex = /.{3,}/;
+  if (regex.test(siteName.value)) {
+    siteName.classList.remove("is-invalid");
+    siteName.classList.add("is-valid");
+  } else {
+    siteName.classList.remove("is-valid");
+    siteName.classList.add("is-invalid");
   }
 }
 
-
-function visit(url)
-{
+function visit(url) {
   let regex = /^(https:|http:)\/\//;
-  if(regex.test(url))
-  {
+  if (regex.test(url)) {
     window.open(url);
-  }
-  else
-  {
-    window.open("https://"+url);
+  } else {
+    window.open("https://" + url);
   }
 }
 
-siteName.addEventListener('input',validateName);
-siteUrl.addEventListener('input',validteUrl);
+siteName.addEventListener("input", validateName);
+siteUrl.addEventListener("input", validteUrl);
 
-close.addEventListener('click',(e) => {
-  popUp.classList.remove('d-block');
-  popUp.classList.add('d-none');
-  e.stopPropagation();
-})
-
-document.querySelector('.pop-up-content').addEventListener('click',(e) => {
-  popUp.classList.remove('d-none');
-  popUp.classList.add('d-block');
+close.addEventListener("click", (e) => {
+  popUp.classList.remove("d-block");
+  popUp.classList.add("d-none");
   e.stopPropagation();
 });
-popUp.addEventListener('click',(e) => {
-      popUp.classList.remove("d-block");
-      popUp.classList.add("d-none");
-})
 
+document.querySelector(".pop-up-content").addEventListener("click", (e) => {
+  popUp.classList.remove("d-none");
+  popUp.classList.add("d-block");
+  e.stopPropagation();
+});
+popUp.addEventListener("click", (e) => {
+  popUp.classList.remove("d-block");
+  popUp.classList.add("d-none");
+});
