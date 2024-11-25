@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../fonts/Pacifico/Pacifico-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Righteous';
+    src: url(../fonts/Righteous-Regular.ttf);
+}
+body {
+    background-color: #f7ecde !important;
+}
+
+.logo 
+{
+    font-family:'Pacifico';
+    font-size: 50px;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.logo::after
+{
+    content:'';
+    position: absolute;
+    background-color: #fec260;
+    height: 20px;
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover::after
+{
+    height: 40px;
+}
+
+.myheader
+{
+    border-bottom: 2px dotted black;
+}
+
+.bookmark-text
+{
+    font-family: 'Righteous';
+    font-size: 25px;
+    background-image: linear-gradient(to right,#3ca55c, #b5ac49);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mysubmit
+{
+    background-color: #d1512d !important;
+    color: white !important;
+    padding: 5px 60px !important;
+}
+.mysubmit:hover
+{
+    background-color: #be4726 !important;
+}
+.form-control:focus
+{
+    border-color: #d99c39;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #fec26055;
+}
+
+.myform
+{
+    border-bottom: 2px dotted #000;
+}
+
+.mytable
+{
+    margin-top: 20px;
+    width: 100%;
+}
+.mytable tr
+{
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 0.8px solid #00000027;
+}
+
+
+.mytable th,td
+{
+    display: inline-block;
+    width: 24%;
+    padding:8px;
+    text-align: center;
+}
+
+.green-button
+{
+    background-color: #9eb23b !important;
+    color: #fff !important;
+}
+.green-button:hover
+{
+    background-color:  #7b9209 !important;
+}
+
+.pop-up
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.pop-up-content
+{
+    width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.mycircle
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.red
+{
+    background-color: #f15f5d;
+}
+
+.green
+{
+    background-color: #4db748;
+}
+
+.yellow
+{
+    background-color: #febe2e;
+}
+
+.close
+{
+    cursor: pointer;
+}
