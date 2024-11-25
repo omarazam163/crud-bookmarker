@@ -52,7 +52,7 @@ Here are some ideas for extending the functionality:
 
 ## Screenshots
 
-![screen short](https://i.postimg.cc/C58Fwj9m/Screenshot-2024-11-25-102057.png)]
+![screen short](https://i.postimg.cc/C58Fwj9m/Screenshot-2024-11-25-102057.png)
 
 ---
 
