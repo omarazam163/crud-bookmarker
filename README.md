@@ -52,7 +52,7 @@ Here are some ideas for extending the functionality:
 
 ## Screenshots
 
-![Bookmarker App Screenshot](./path_to_screenshot.png)
+![Bookmarker App Screenshot](https://ibb.co/HqPrRKF)
 
 ---
 
