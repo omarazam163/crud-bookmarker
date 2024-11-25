@@ -52,7 +52,7 @@ Here are some ideas for extending the functionality:
 
 ## Screenshots
 
-![Bookmarker App Screenshot](https://ibb.co/HqPrRKF][img]https://i.ibb.co/PgW5Jrm/Screenshot-2024-11-25-102057.png)
+![Bookmarker App Screenshot]([![Screenshot-2024-11-25-102057.png](https://i.postimg.cc/C58Fwj9m/Screenshot-2024-11-25-102057.png)](https://postimg.cc/gLY9D6zZ))
 
 ---
 
